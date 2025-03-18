@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -16,6 +15,7 @@ export interface Game {
   publishers?: { id: number; name: string }[];
   tags?: { id: number; name: string }[];
   esrb_rating?: { id: number; name: string } | null;
+  website?: string; // Ajout de la propriété website
 }
 
 interface FetchGamesParams {

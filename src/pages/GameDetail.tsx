@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Star, Users, Gamepad } from 'lucide-react';
@@ -14,19 +13,16 @@ const GameDetail = () => {
   const gameId = id ? parseInt(id) : null;
   const { game, isLoading, error } = useGameDetails(gameId);
   
-  // Remonter au haut de la page au chargement
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
   
-  // Formatage de la date
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'Date inconnue';
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('fr-FR', options);
   };
   
-  // Récupérer le score Metacritic
   const getMetacriticColor = (score?: number) => {
     if (!score) return 'bg-muted text-muted-foreground';
     if (score >= 85) return 'bg-green-500/90 text-white';
@@ -34,10 +30,15 @@ const GameDetail = () => {
     return 'bg-red-500/90 text-white';
   };
 
+  const handleVisitWebsite = () => {
+    if (game?.website) {
+      window.open(game.website, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="h-[70vh] relative">
-        {/* Bouton de retour */}
         <Button
           variant="secondary"
           size="sm"
@@ -66,7 +67,6 @@ const GameDetail = () => {
         
         {game && (
           <>
-            {/* Image d'arrière-plan avec dégradé */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute inset-0 bg-black/40 z-10"></div>
               <img 
@@ -77,7 +77,6 @@ const GameDetail = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-20"></div>
             </div>
             
-            {/* Informations du jeu (superposées à l'image) */}
             <div className="container mx-auto max-w-5xl relative z-30 h-full flex flex-col justify-end pb-16 px-6">
               <div className="opacity-0 animate-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
                 {game.genres && game.genres.length > 0 && (
@@ -197,7 +196,12 @@ const GameDetail = () => {
                 <Separator className="my-6" />
                 
                 <div className="flex justify-center">
-                  <Button className="w-full" size="lg">
+                  <Button 
+                    className="w-full" 
+                    size="lg"
+                    onClick={handleVisitWebsite}
+                    disabled={!game?.website}
+                  >
                     Visiter le site officiel
                   </Button>
                 </div>
