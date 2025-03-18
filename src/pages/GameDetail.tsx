@@ -31,8 +31,13 @@ const GameDetail = () => {
   };
 
   const handleVisitWebsite = () => {
-    if (game?.website) {
-      window.open(game.website, '_blank', 'noopener,noreferrer');
+    if (game) {
+      if (game.website) {
+        window.open(game.website, '_blank', 'noopener,noreferrer');
+      } else {
+        const steamSearchUrl = `https://store.steampowered.com/search/?term=${encodeURIComponent(game.name)}`;
+        window.open(steamSearchUrl, '_blank', 'noopener,noreferrer');
+      }
     }
   };
 
@@ -200,9 +205,8 @@ const GameDetail = () => {
                     className="w-full" 
                     size="lg"
                     onClick={handleVisitWebsite}
-                    disabled={!game?.website}
                   >
-                    Visiter le site officiel
+                    {game.website ? 'Visiter le site officiel' : 'Rechercher sur Steam'}
                   </Button>
                 </div>
               </div>
