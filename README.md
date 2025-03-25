@@ -39,20 +39,6 @@ npm i
 npm run dev
 ```
 
-**Modifier un fichier directement sur GitHub**
-
-- Naviguez vers le(s) fichier(s) souhaité(s).
-- Cliquez sur le bouton "Modifier" (icône de crayon) en haut à droite de la vue du fichier.
-- Faites vos modifications et validez les changements.
-
-**Utiliser GitHub Codespaces**
-
-- Naviguez vers la page principale de votre dépôt.
-- Cliquez sur le bouton "Code" (bouton vert) en haut à droite.
-- Sélectionnez l'onglet "Codespaces".
-- Cliquez sur "Nouveau codespace" pour lancer un nouvel environnement Codespace.
-- Modifiez les fichiers directement dans le Codespace et validez et poussez vos modifications une fois que vous avez terminé.
-
 ## Quelles technologies sont utilisées pour ce projet ?
 
 Ce projet est construit avec :
@@ -62,7 +48,3 @@ Ce projet est construit avec :
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## Comment déployer ce projet ?
-
-Ouvrez simplement [Lovable](https://lovable.dev/projects/8f3c1bbc-2c15-4bed-9ccc-ed219276b5cc) et cliquez sur Partager -> Publier.
