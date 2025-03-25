@@ -1,50 +1,106 @@
+# 🎮 Explorateur de Bibliothèque de Jeux
 
-# Projet d'explorateur de bibliothèque de jeux
+## 📜 Table des matières
 
-Ce projet est dédié à la recherche de titre jeux vidéo qui utilise une api fournie par rawg.
+- [📖 Description](#-description)
+- [🚀 Fonctionnalités](#-fonctionnalités)
+- [🛠️ Technologies utilisées](#-technologies-utilisées)
+- [📌 Prérequis](#-prérequis)
+- [⚙️ Installation](#-installation)
+- [🖥️ Aperçu](#-aperçu)
+- [🤝 Contribution](#-contribution)
+- [📄 License](#-license)
 
-## Informations du projet
+---
 
-**URL**: https://lovable.dev/projects/8f3c1bbc-2c15-4bed-9ccc-ed219276b5cc
+## 📖 Description  
 
-## Comment modifier ce code ?
+Bienvenue dans l'**Explorateur de Bibliothèque de Jeux** ! 🎮🚀  
 
-Il existe plusieurs façons de modifier votre application.
+Ce projet est une plateforme permettant aux utilisateurs d'explorer, rechercher et organiser leurs jeux vidéo favoris de manière intuitive. Il s'intègre à une API de jeux vidéo pour fournir des informations complètes sur les titres disponibles.
 
-**Utiliser Lovable**
+### Fonctionnalités principales :
+- **Recherche avancée** pour trouver des jeux vidéo par nom, genre ou plateforme.
+- **Affichage des détails des jeux** (description, images, notes, etc.).
+- **Ajout et gestion d'une bibliothèque personnelle** de jeux favoris.
+- **Interface fluide et moderne** facilitant l'expérience utilisateur.
 
-Visitez simplement le [Projet Lovable](https://lovable.dev/projects/8f3c1bbc-2c15-4bed-9ccc-ed219276b5cc) et commencez à dialoguer.
+Ce projet a pour but de fournir un outil simple et efficace aux passionnés de jeux vidéo pour explorer et organiser leur collection ! 🎮📚
 
-Les modifications effectuées via Lovable seront automatiquement enregistrées dans ce dépôt.
+---
 
-**Utiliser votre IDE préféré**
+## 🚀 Fonctionnalités
 
-Si vous souhaitez travailler localement avec votre propre IDE, vous pouvez cloner ce dépôt et pousser vos modifications. Les changements envoyés seront également reflétés dans Lovable.
+✔️ **Recherche dynamique** des jeux via une API.  
+📌 **Détails complets** sur chaque jeu (titre, description, images, etc.).  
+🎮 **Ajout et gestion d'une collection personnalisée**.  
+⚡ **Interface réactive et design moderne**.  
+📊 **Classement des jeux selon différents critères** (popularité, note, etc.).  
 
-La seule exigence est d'avoir Node.js et npm installés - [installer avec nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Suivez ces étapes :
+## 🛠️ Technologies utilisées  
 
-```sh
-# Étape 1 : Cloner le dépôt en utilisant l'URL Git du projet.
-git clone <VOTRE_URL_GIT>
+- **💻 Framework** : Vue.js (Vite)  
+- **📡 API** : IGDB ou autre API de jeux vidéo  
+- **🎨 UI** : Tailwind CSS  
+- **🗄️ Base de données** : Firebase / Supabase (optionnel pour la gestion de la bibliothèque personnelle)  
 
-# Étape 2 : Naviguer vers le répertoire du projet.
-cd <NOM_DE_VOTRE_PROJET>
+---
 
-# Étape 3 : Installer les dépendances nécessaires.
-npm i
+## 📌 Prérequis
 
-# Étape 4 : Démarrer le serveur de développement avec rechargement automatique et un aperçu instantané.
+Avant de commencer, assurez-vous d'avoir installé :  
+
+- **Node.js** (version 14 ou supérieure)  
+- Un éditeur de code (VS Code recommandé)  
+
+---
+
+## ⚙️ Installation  
+
+1️⃣ **Clonez le dépôt**  
+```bash
+git clone https://github.com/votre-utilisateur/Explorateur-Bibliotheque-Jeux.git
+cd Explorateur-Bibliotheque-Jeux
+```
+2️⃣ **Installez les dépendances**
+```bash
+npm install
+```
+3️⃣ **Lancez le serveur**
+```bash
 npm run dev
 ```
+4️⃣ **Accédez à l'application**
+Ouvrez votre navigateur et allez sur :
+```bash
+http://localhost:8080
+```
 
-## Quelles technologies sont utilisées pour ce projet ?
+---
 
-Ce projet est construit avec :
+## 🖥️ Aperçu
+✨ **Interface utilisateur moderne et intuitive**  
+🔍 **Recherche rapide et filtrage des jeux**  
+🎮 **Affichage des détails des jeux**  
+📚 **Gestion personnalisée de la bibliothèque de jeux**  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! 🎉
+
+**Forkez** le projet  
+**Créez** une branche (**'feature/nouvelle-fonctionnalite'**)  
+**Faites** vos modifications  
+**Soumettez** une pull request  
+
+---
+
+## 📄 License
+📌 Ce projet est un projet personnel éducatif et ne doit pas être utilisé à des fins commerciales.
+
+🚀 Amusez-vous bien avec l'explorateur de bibliothèque de jeux ! 🎮🎉
+
