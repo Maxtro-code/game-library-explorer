@@ -22,7 +22,7 @@ Ce projet est une plateforme permettant aux utilisateurs d'explorer, rechercher 
 ### Fonctionnalités principales :
 - **Recherche avancée** pour trouver des jeux vidéo par nom, genre ou plateforme.
 - **Affichage des détails des jeux** (description, images, notes, etc.).
-- **Ajout et gestion d'une bibliothèque personnelle** de jeux favoris.
+- **Ajout et gestion d'une bibliothèque personnelle** de jeux favoris. (en développement)
 - **Interface fluide et moderne** facilitant l'expérience utilisateur.
 
 Ce projet a pour but de fournir un outil simple et efficace aux passionnés de jeux vidéo pour explorer et organiser leur collection ! 🎮📚
@@ -33,7 +33,7 @@ Ce projet a pour but de fournir un outil simple et efficace aux passionnés de j
 
 ✔️ **Recherche dynamique** des jeux via une API.  
 📌 **Détails complets** sur chaque jeu (titre, description, images, etc.).  
-🎮 **Ajout et gestion d'une collection personnalisée**.  
+🎮 **Ajout et gestion d'une collection personnalisée**.  (en développement)
 ⚡ **Interface réactive et design moderne**.  
 📊 **Classement des jeux selon différents critères** (popularité, note, etc.).  
 
@@ -42,7 +42,7 @@ Ce projet a pour but de fournir un outil simple et efficace aux passionnés de j
 ## 🛠️ Technologies utilisées  
 
 - **💻 Framework** : Vue.js (Vite)  
-- **📡 API** : IGDB ou autre API de jeux vidéo  
+- **📡 API** : API de rawg  
 - **🎨 UI** : Tailwind CSS  
 - **🗄️ Base de données** : Firebase / Supabase (optionnel pour la gestion de la bibliothèque personnelle)  
 
@@ -61,8 +61,8 @@ Avant de commencer, assurez-vous d'avoir installé :
 
 1️⃣ **Clonez le dépôt**  
 ```bash
-git clone https://github.com/votre-utilisateur/Explorateur-Bibliotheque-Jeux.git
-cd Explorateur-Bibliotheque-Jeux
+git clone https://github.com/Maxtro-code/game-library-explorer
+cd game-library-explorer
 ```
 2️⃣ **Installez les dépendances**
 ```bash
@@ -72,12 +72,6 @@ npm install
 ```bash
 npm run dev
 ```
-4️⃣ **Accédez à l'application**
-Ouvrez votre navigateur et allez sur :
-```bash
-http://localhost:8080
-```
-
 ---
 
 ## 🖥️ Aperçu
