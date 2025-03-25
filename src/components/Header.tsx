@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Gamepad, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -11,6 +11,7 @@ interface HeaderProps {
 const Header = ({ onSearch }: HeaderProps) => {
   const [query, setQuery] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,16 @@ const Header = ({ onSearch }: HeaderProps) => {
     onSearch(query);
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/');
+    // Reset search if needed
+    if (query) {
+      setQuery('');
+      onSearch('');
+    }
+  };
+
   return (
     <header 
       className={`
@@ -37,6 +48,7 @@ const Header = ({ onSearch }: HeaderProps) => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
+            onClick={handleLogoClick}
             className="flex items-center space-x-2 transition-transform hover:scale-[1.03] duration-300 ease-apple"
           >
             <Gamepad className="w-8 h-8 text-primary animate-float" strokeWidth={1.5} />
