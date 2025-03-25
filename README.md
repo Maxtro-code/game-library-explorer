@@ -1,5 +1,5 @@
 
-# Bienvenue sur votre projet Lovable
+# Projet d'explorateur de bibliothèque de jeux
 
 ## Informations du projet
 
