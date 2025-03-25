@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -15,7 +16,18 @@ export interface Game {
   publishers?: { id: number; name: string }[];
   tags?: { id: number; name: string }[];
   esrb_rating?: { id: number; name: string } | null;
-  website?: string; // Ajout de la propriété website
+  website?: string;
+  creators?: Creator[];
+}
+
+export interface Creator {
+  id: number;
+  name: string;
+  slug: string;
+  image?: string;
+  image_background?: string;
+  games_count?: number;
+  positions?: { id: number; name: string; slug: string }[];
 }
 
 interface FetchGamesParams {
@@ -103,6 +115,19 @@ export const useGameDetails = (gameId: number | null) => {
         }
         
         const data = await response.json();
+        
+        // Récupérer les créateurs du jeu
+        const creatorsUrl = `${API_BASE_URL}/games/${gameId}/development-team?key=${API_KEY}`;
+        try {
+          const creatorsResponse = await fetch(creatorsUrl);
+          if (creatorsResponse.ok) {
+            const creatorsData = await creatorsResponse.json();
+            data.creators = creatorsData.results || [];
+          }
+        } catch (creatorErr) {
+          console.error('Erreur lors de la récupération des créateurs:', creatorErr);
+        }
+        
         setGame(data);
       } catch (err) {
         console.error('Erreur lors de la récupération des détails du jeu:', err);
@@ -121,4 +146,48 @@ export const useGameDetails = (gameId: number | null) => {
   }, [gameId, toast]);
 
   return { game, isLoading, error };
+};
+
+export const useCreatorDetails = (creatorId: number | null) => {
+  const [creator, setCreator] = useState<Creator | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Ne rien faire si creatorId est null
+    if (creatorId === null) return;
+
+    const fetchCreatorDetails = async () => {
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const url = `${API_BASE_URL}/creators/${creatorId}?key=${API_KEY}`;
+        
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`Erreur HTTP: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setCreator(data);
+      } catch (err) {
+        console.error('Erreur lors de la récupération des détails du créateur:', err);
+        setError(err instanceof Error ? err.message : 'Une erreur est survenue');
+        toast({
+          title: "Erreur de chargement",
+          description: "Impossible de charger les détails du créateur. Veuillez réessayer.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCreatorDetails();
+  }, [creatorId, toast]);
+
+  return { creator, isLoading, error };
 };

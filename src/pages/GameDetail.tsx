@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Star, Users, Gamepad } from 'lucide-react';
 import { useGameDetails } from '@/hooks/useGames';
@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import LoadingSpinner from '@/components/LoadingSpinner';
+import { CreatorDetailDialog } from '@/components/CreatorDetail';
 
 const GameDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const gameId = id ? parseInt(id) : null;
   const { game, isLoading, error } = useGameDetails(gameId);
+  const [showAllCreators, setShowAllCreators] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,6 +42,12 @@ const GameDetail = () => {
       }
     }
   };
+
+  const displayedCreators = game?.creators 
+    ? (showAllCreators ? game.creators : game.creators.slice(0, 4)) 
+    : [];
+  
+  const hasMoreCreators = game?.creators && game.creators.length > 4;
 
   return (
     <div className="min-h-screen bg-background">
@@ -143,6 +151,30 @@ const GameDetail = () => {
               </div>
               
               <Separator className="my-8" />
+              
+              {game.creators && game.creators.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-medium mb-4">Contributeurs</h3>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {displayedCreators.map(creator => (
+                      <CreatorDetailDialog key={creator.id} creator={creator} />
+                    ))}
+                  </div>
+                  
+                  {hasMoreCreators && (
+                    <Button 
+                      variant="ghost" 
+                      className="mt-4"
+                      onClick={() => setShowAllCreators(!showAllCreators)}
+                    >
+                      {showAllCreators ? 'Afficher moins' : `Voir tous les contributeurs (${game.creators.length})`}
+                    </Button>
+                  )}
+                  
+                  <Separator className="my-8" />
+                </div>
+              )}
               
               {game.tags && game.tags.length > 0 && (
                 <div className="mb-8">
