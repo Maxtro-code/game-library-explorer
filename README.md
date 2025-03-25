@@ -1,6 +1,8 @@
 
 # Projet d'explorateur de bibliothèque de jeux
 
+Ce projet est dédié à la recherche de titre jeux vidéo qui utilise une api fournie par rawg.
+
 ## Informations du projet
 
 **URL**: https://lovable.dev/projects/8f3c1bbc-2c15-4bed-9ccc-ed219276b5cc
@@ -64,7 +66,3 @@ Ce projet est construit avec :
 ## Comment déployer ce projet ?
 
 Ouvrez simplement [Lovable](https://lovable.dev/projects/8f3c1bbc-2c15-4bed-9ccc-ed219276b5cc) et cliquez sur Partager -> Publier.
-
-## Je veux utiliser un domaine personnalisé - est-ce possible ?
-
-Nous ne prenons pas en charge les domaines personnalisés (pour l'instant). Si vous souhaitez déployer votre projet sous votre propre domaine, nous vous recommandons d'utiliser Netlify. Visitez notre documentation pour plus de détails : [Domaines personnalisés](https://docs.lovable.dev/tips-tricks/custom-domain/)
