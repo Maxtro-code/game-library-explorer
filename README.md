@@ -62,6 +62,8 @@ Avant de commencer, assurez-vous d'avoir installé :
 1️⃣ **Clonez le dépôt**  
 ```bash
 git clone https://github.com/Maxtro-code/game-library-explorer
+```
+```bash
 cd game-library-explorer
 ```
 2️⃣ **Installez les dépendances**
