@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { CreatorDetailDialog } from '@/components/CreatorDetail';
+import { DevPublisherDialog } from '@/components/DevPublisherDialog';
 
 const GameDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -151,6 +152,13 @@ const GameDetail = () => {
               </div>
               
               <Separator className="my-8" />
+              
+              <div className="mb-8">
+                <DevPublisherDialog 
+                  developers={game.developers}
+                  publishers={game.publishers}
+                />
+              </div>
               
               {game.creators && game.creators.length > 0 && (
                 <div className="mb-8">
