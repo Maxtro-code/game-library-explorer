@@ -2,6 +2,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { Users, Building } from 'lucide-react';
+import { CreatorDetailDialog } from '@/components/CreatorDetail';
 
 interface DevPublisherDialogProps {
   developers?: { id: number; name: string }[];
@@ -31,9 +32,14 @@ export const DevPublisherDialog = ({ developers, publishers }: DevPublisherDialo
               </h3>
               <div className="flex flex-wrap gap-2">
                 {developers.map(dev => (
-                  <Badge key={dev.id} variant="secondary">
-                    {dev.name}
-                  </Badge>
+                  <CreatorDetailDialog 
+                    key={dev.id} 
+                    creator={{
+                      id: dev.id,
+                      name: dev.name,
+                      slug: dev.name.toLowerCase().replace(/ /g, '-')
+                    }} 
+                  />
                 ))}
               </div>
             </div>
