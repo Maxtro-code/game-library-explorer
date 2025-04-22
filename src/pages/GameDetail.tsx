@@ -8,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { CreatorDetailDialog } from '@/components/CreatorDetail';
 import { DevPublisherDialog } from '@/components/DevPublisherDialog';
+import { TagDetailDialog } from '@/components/TagDetailDialog';
 
 const GameDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -189,9 +190,7 @@ const GameDetail = () => {
                   <h3 className="text-xl font-medium mb-4">Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {game.tags.map(tag => (
-                      <Badge key={tag.id} variant="outline" className="px-3 py-1">
-                        {tag.name}
-                      </Badge>
+                      <TagDetailDialog key={tag.id} tag={tag} />
                     ))}
                   </div>
                 </div>
