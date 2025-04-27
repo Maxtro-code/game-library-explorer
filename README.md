@@ -7,7 +7,6 @@
 - [🛠️ Technologies utilisées](#-technologies-utilisées)
 - [📌 Prérequis](#-prérequis)
 - [⚙️ Installation](#-installation)
-- [🖥️ Aperçu](#-aperçu)
 - [🤝 Contribution](#-contribution)
 - [📄 License](#-license)
 
@@ -74,14 +73,6 @@ npm install
 ```bash
 npm run dev
 ```
----
-
-## 🖥️ Aperçu
-✨ **Interface utilisateur moderne et intuitive**  
-🔍 **Recherche rapide et filtrage des jeux**  
-🎮 **Affichage des détails des jeux**  
-📚 **Gestion personnalisée de la bibliothèque de jeux**  
-
 ---
 
 ## 🤝 Contribution
